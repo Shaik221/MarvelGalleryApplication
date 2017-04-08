@@ -44,6 +44,7 @@ public class ComicsListPresenter implements ComicsListContract.Presenter {
         if(hashKey != null)
             params.put("hash", hashKey);
 
+        params.put("limit", "100");
 
         retrofit.create(GetComicsList.class).getAllCommicsDetails(url, params).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

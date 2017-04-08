@@ -1,10 +1,11 @@
 package gallery.marvel.example.com.marvelgallery.model.beans;
 
+import java.io.Serializable;
 import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Result {
+public class Result implements Serializable {
 
 @SerializedName("id")
 @Expose
@@ -23,7 +24,7 @@ private Integer issueNumber;
 private String variantDescription;
 @SerializedName("description")
 @Expose
-private Object description;
+private String description;
 @SerializedName("modified")
 @Expose
 private String modified;
@@ -134,11 +135,11 @@ public void setVariantDescription(String variantDescription) {
 this.variantDescription = variantDescription;
 }
 
-public Object getDescription() {
+public String getDescription() {
 return description;
 }
 
-public void setDescription(Object description) {
+public void setDescription(String description) {
 this.description = description;
 }
 

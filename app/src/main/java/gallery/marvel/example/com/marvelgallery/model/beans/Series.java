@@ -3,7 +3,9 @@ package gallery.marvel.example.com.marvelgallery.model.beans;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Series {
+import java.io.Serializable;
+
+public class Series implements Serializable {
 
 @SerializedName("resourceURI")
 @Expose

@@ -2,4 +2,10 @@
     <string name="app_name">MarvelGallery</string>
     <string name="alert_ok">Ok</string>
     <string name="alert_nonetwork">No Network</string>
+    <string name="selected_comic">Comic Details</string>
+    <string name="other_details">Other Details</string>
+    <string name="comic_description">Description</string>
+    <string name="page_cnt">Page Count</string>
+    <string name="comic_price">Comic Price</string>
+    <string name="comic_authors">Authors</string>
 </resources>

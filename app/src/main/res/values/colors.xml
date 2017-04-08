@@ -3,4 +3,7 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="background_color">#F5F6F9</color>
+    <color name="layout_cell_color">#FFFFFF</color>
+    <color name="line_stroke_color">#E2E2E4</color>
 </resources>

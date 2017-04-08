@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/select_comic_main_layout"
+    android:background="@color/background_color"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/header_height"
+            android:background="@color/layout_cell_color">
+
+            <Button
+                android:id="@+id/backBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/backbtn"
+                android:background="@android:color/transparent"
+                android:layout_alignParentLeft="true"
+                android:clickable="true"
+                android:paddingLeft="@dimen/headtext_padding"
+                android:layout_centerVertical="true"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/selected_comic"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+             />
+
+        <View
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_stroke_height"
+            android:background="@color/line_stroke_color"/>
+
+        </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_margin="@dimen/layout_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background_color">
+     <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/comic_img"
+        android:paddingTop="20dp"
+         android:paddingLeft="20dp"
+         android:paddingRight="10dp"
+         android:paddingBottom="10dp"
+        android:layout_alignParentLeft="true"
+        android:src="@drawable/xtra_load1"/>
+
+     <TextView
+         android:layout_margin="@dimen/layout_margin"
+        android:id="@+id/comic_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/comic_img"
+         android:text="@string/comic_description"
+         android:paddingTop="15dp"
+        android:inputType="textNoSuggestions" />
+
+
+        <TextView
+            android:layout_margin="@dimen/layout_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/comic_img"
+            android:text="@string/other_details"
+            android:paddingTop="15dp"
+            android:paddingBottom="10dp"
+            android:inputType="textNoSuggestions" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/layout_cell_color"
+        >
+
+            <TextView
+                android:layout_margin="@dimen/layout_margin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/layout_margin_top"
+                android:id="@+id/comic_description"
+                android:text="@string/comic_description"
+                android:layout_centerVertical="true"
+             />
+
+
+            <View
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:background="@color/line_stroke_color"/>
+
+            <TextView
+                android:layout_margin="@dimen/layout_margin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/layout_margin_top"
+                android:id="@+id/page_count"
+                android:text="@string/page_cnt"
+                android:layout_centerVertical="true"
+
+                 />
+
+            <View
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:background="@color/line_stroke_color"/>
+
+            <TextView
+                android:layout_margin="@dimen/layout_margin"
+                android:id="@+id/price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/layout_margin_top"
+                android:text="@string/comic_price"
+                android:layout_centerVertical="true"
+                 />
+
+        <View
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:background="@color/line_stroke_color"/>
+
+        <TextView
+                android:layout_margin="@dimen/layout_margin"
+                android:id="@+id/authors"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/layout_margin_top"
+                android:text="@string/comic_authors"
+                android:layout_centerVertical="true"
+                 />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_stroke_height"
+            android:background="@color/line_stroke_color"/>
+        </LinearLayout>
+
+
+
+    </LinearLayout>

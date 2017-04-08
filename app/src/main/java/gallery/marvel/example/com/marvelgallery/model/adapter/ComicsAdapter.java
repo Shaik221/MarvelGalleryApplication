@@ -16,6 +16,7 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.List;
 
+import gallery.marvel.example.com.marvelgallery.ComicDetailsActivity;
 import gallery.marvel.example.com.marvelgallery.R;
 import gallery.marvel.example.com.marvelgallery.model.beans.Result;
 import gallery.marvel.example.com.marvelgallery.utils.ImageUtils;
@@ -36,39 +37,22 @@ public class ComicsAdapter extends RecyclerView.Adapter<ComicsAdapter.ViewHolder
     }
 
     @Override
-    public void onBindViewHolder(ComicsAdapter.ViewHolder viewHolder, int i) {
+    public void onBindViewHolder(ComicsAdapter.ViewHolder viewHolder, final int i) {
         viewHolder.title.setText(galleryList.get(i).getTitle());
 
         //Loading image from below url into imageView
-
         Picasso.with(context)
                 .load(galleryList.get(i).getThumbnail().getPath()+"."+galleryList.get(i).getThumbnail().getExtension())
                 .into(viewHolder.img);
-      /*  Bitmap tempBitmap = ImageUtils.decodeResource(context.getResources(),galleryList.get(i).getImage_ID());
-        int height = ImageUtils.dpToPx(context,200);
-        int width = viewHolder.img.getMaxWidth();
-        Bitmap scaleBitmap = ImageUtils.getResizedBitmap(tempBitmap,width,height);*/
-        //viewHolder.img.setImageBitmap(scaleBitmap);
 
-        //viewHolder.img.setScaleType(ImageView.ScaleType.FIT_XY);
-     /*   viewHolder.img.setOnClickListener(new View.OnClickListener() {
+        viewHolder.img.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, ListItemsActivity.class);
-                intent.putExtra("GalleryName", galleryCatName );
+                Intent intent = new Intent(context, ComicDetailsActivity.class);
+                intent.putExtra("ComicDetails", galleryList.get(i));
                 context.startActivity(intent);
             }
         });
-
-        viewHolder.img.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View view) {
-                Intent intent = new Intent(context, DialogFragmentWindow.class);
-                intent.putExtra("GalleryName", galleryCatName );
-                context.startActivity(intent);
-                return false;
-            }
-        });*/
     }
 
     @Override

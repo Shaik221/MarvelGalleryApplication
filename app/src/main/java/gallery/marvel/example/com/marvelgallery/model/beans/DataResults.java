@@ -3,7 +3,9 @@ package gallery.marvel.example.com.marvelgallery.model.beans;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class DataResults {
+import java.io.Serializable;
+
+public class DataResults implements Serializable {
 
 @SerializedName("code")
 @Expose

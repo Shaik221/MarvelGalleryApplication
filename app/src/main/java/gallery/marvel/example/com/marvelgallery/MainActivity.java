@@ -1,5 +1,6 @@
 package gallery.marvel.example.com.marvelgallery;
 
+import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -21,7 +22,7 @@ import gallery.marvel.example.com.marvelgallery.utils.ConnectivityReceiver;
 import gallery.marvel.example.com.marvelgallery.utils.TransparentProgressDialog;
 import gallery.marvel.example.com.marvelgallery.utils.UserAlerts;
 
-public class MainActivity extends AppCompatActivity implements ComicsListContract.View{
+public class MainActivity extends Activity implements ComicsListContract.View{
 
     RecyclerView recyclerView;
     TransparentProgressDialog pDialog;
