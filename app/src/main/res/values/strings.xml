@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MarvelGallery</string>
+    <string name="alert_ok">Ok</string>
+    <string name="alert_nonetwork">No Network</string>
+</resources>
