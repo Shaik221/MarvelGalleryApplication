@@ -6,10 +6,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.List;
+
+import gallery.marvel.example.com.marvelgallery.model.beans.Item;
+import gallery.marvel.example.com.marvelgallery.model.beans.Items;
 import gallery.marvel.example.com.marvelgallery.model.beans.Result;
 
 public class ComicDetailsActivity extends Activity implements View.OnClickListener {
 
+    private StringBuffer sb= new StringBuffer("");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,10 +32,21 @@ public class ComicDetailsActivity extends Activity implements View.OnClickListen
         // To retrieve object in second Activity
         Result comicDetails = (Result)getIntent().getSerializableExtra("ComicDetails");
         title.setText(comicDetails.getTitle());
+
         descrption.setText(comicDetails.getDescription());
         pageCount.setText(comicDetails.getPageCount().toString());
         price.setText(comicDetails.getPrices().get(0).getPrice().toString());
-        //authors.setText(comicDetails.getA);
+        //checking author details
+        if(comicDetails.getCreators().getReturned() > 0)
+        {
+            List<Item> authorsList= comicDetails.getCreators().getItems();
+            for(int i =0; i< authorsList.size(); i++)
+            {
+                sb.append(authorsList.get(i).getName()).append(" ").append(authorsList.get(i).getRole());
+                sb.append('\n');
+            }
+        }
+        authors.setText(sb.toString());
     }
 
     @Override
