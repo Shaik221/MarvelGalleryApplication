@@ -45,14 +45,23 @@ public class ComicsAdapter extends RecyclerView.Adapter<ComicsAdapter.ViewHolder
                 .load(galleryList.get(i).getThumbnail().getPath()+"."+galleryList.get(i).getThumbnail().getExtension())
                 .into(viewHolder.img);
 
-        viewHolder.img.setOnClickListener(new View.OnClickListener() {
+        viewHolder.setClickListener(new ItemClickListener() {
+                                        @Override
+                                        public void onClickItem(int pos) {
+                                            Intent intent = new Intent(context, ComicDetailsActivity.class);
+                                            intent.putExtra("ComicDetails", galleryList.get(i));
+                                            context.startActivity(intent);
+                                        }
+                                    });
+
+     /*   viewHolder.img.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, ComicDetailsActivity.class);
                 intent.putExtra("ComicDetails", galleryList.get(i));
                 context.startActivity(intent);
             }
-        });
+        });*/
     }
 
     @Override
@@ -60,15 +69,26 @@ public class ComicsAdapter extends RecyclerView.Adapter<ComicsAdapter.ViewHolder
         return galleryList.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private TextView title;
         private ImageView img;
+        private ItemClickListener mListener;
 
         public ViewHolder(View view) {
             super(view);
             title = (TextView) view.findViewById(R.id.tile);
             img = (ImageView) view.findViewById(R.id.icon);
+            view.setOnClickListener(this);
+        }
+        public void setClickListener(ItemClickListener listener) {
+            this.mListener = listener;
+        }
+        @Override public void onClick(View view) {
+            mListener.onClickItem(getLayoutPosition());
         }
 
+    }
+    public interface ItemClickListener {
+        void onClickItem(int pos);
     }
 }

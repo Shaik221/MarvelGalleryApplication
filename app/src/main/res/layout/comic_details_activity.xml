@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
 <LinearLayout android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
@@ -30,6 +35,7 @@
                 android:text="@string/selected_comic"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
+                style="@style/page_title"
              />
 
         <View
@@ -46,37 +52,41 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/background_color">
-     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/comic_img"
-        android:paddingTop="20dp"
-         android:paddingLeft="20dp"
-         android:paddingRight="10dp"
-         android:paddingBottom="10dp"
-        android:layout_alignParentLeft="true"
-        android:src="@drawable/xtra_load1"/>
 
      <TextView
          android:layout_margin="@dimen/layout_margin"
-        android:id="@+id/comic_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/comic_img"
-         android:text="@string/comic_description"
+         android:id="@+id/titleText"
+         android:text="@string/comic_title"
+         style="@style/title_text_style"
          android:paddingTop="15dp"
+         android:paddingLeft="15dp"
         android:inputType="textNoSuggestions" />
-
 
         <TextView
             android:layout_margin="@dimen/layout_margin"
+            android:id="@+id/comic_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/comic_img"
+            android:layout_toRightOf="@+id/titleText"
+            android:text="@string/comic_title"
+            android:inputType="textMultiLine|textNoSuggestions"
+            style="@style/text_style"
+            android:paddingTop="15dp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="@string/other_details"
-            android:paddingTop="15dp"
+            android:paddingTop="20dp"
+            android:paddingLeft="15dp"
             android:paddingBottom="10dp"
-            android:inputType="textNoSuggestions" />
+            android:inputType="textNoSuggestions"
+            android:layout_below="@+id/comic_title"
+            style="@style/title_text_style"
+            android:id="@+id/textView" />
     </RelativeLayout>
 
     <LinearLayout
@@ -91,11 +101,26 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/layout_margin_top"
-                android:id="@+id/comic_description"
+                android:paddingLeft="15dp"
+                android:paddingTop="10dp"
                 android:text="@string/comic_description"
+                style="@style/title_text_style"
                 android:layout_centerVertical="true"
              />
 
+        <TextView
+            android:layout_margin="@dimen/layout_margin"
+            android:id="@+id/comic_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/comic_description"
+            android:inputType="textMultiLine|textNoSuggestions"
+            android:paddingLeft="15dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            style="@style/text_style"/>
+
 
             <View
             android:layout_marginLeft="20dp"
@@ -109,11 +134,27 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/layout_margin_top"
-                android:id="@+id/page_count"
                 android:text="@string/page_cnt"
+                android:paddingTop="10dp"
+                android:paddingLeft="15dp"
+                style="@style/title_text_style"
                 android:layout_centerVertical="true"
 
                  />
+
+        <TextView
+            android:layout_margin="@dimen/layout_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/layout_margin_top"
+            android:id="@+id/page_count"
+            android:text="@string/page_cnt"
+            android:paddingLeft="15dp"
+            android:paddingBottom="10dp"
+            style="@style/text_style"
+            android:layout_centerVertical="true"
+
+            />
 
             <View
             android:layout_marginLeft="20dp"
@@ -122,15 +163,29 @@
             android:layout_height="1dp"
             android:background="@color/line_stroke_color"/>
 
-            <TextView
-                android:layout_margin="@dimen/layout_margin"
-                android:id="@+id/price"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/layout_margin_top"
-                android:text="@string/comic_price"
-                android:layout_centerVertical="true"
-                 />
+        <TextView
+            android:layout_margin="@dimen/layout_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/layout_margin_top"
+            android:paddingLeft="15dp"
+            android:paddingTop="10dp"
+            android:text="@string/comic_price"
+            style="@style/title_text_style"
+            android:layout_centerVertical="true"
+        />
+
+        <TextView
+            android:layout_margin="@dimen/layout_margin"
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/layout_margin_top"
+            android:paddingLeft="15dp"
+            android:text="@string/comic_price"
+            style="@style/text_style"
+            android:layout_centerVertical="true"
+            />
 
         <View
             android:layout_marginLeft="20dp"
@@ -141,13 +196,26 @@
 
         <TextView
                 android:layout_margin="@dimen/layout_margin"
-                android:id="@+id/authors"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/layout_margin_top"
+                android:paddingLeft="15dp"
+                android:paddingTop="10dp"
                 android:text="@string/comic_authors"
+                style="@style/title_text_style"
                 android:layout_centerVertical="true"
                  />
+        <TextView
+            android:layout_margin="@dimen/layout_margin"
+            android:id="@+id/authors"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/layout_margin_top"
+            android:text="@string/comic_authors"
+            android:paddingLeft="15dp"
+            style="@style/text_style"
+            android:layout_centerVertical="true"
+            />
 
         <View
             android:layout_width="match_parent"
@@ -156,5 +224,5 @@
         </LinearLayout>
 
 
-
-    </LinearLayout>
+</LinearLayout>
+</ScrollView>
