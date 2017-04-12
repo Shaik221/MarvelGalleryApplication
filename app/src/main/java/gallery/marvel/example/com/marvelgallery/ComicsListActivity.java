@@ -1,12 +1,14 @@
 package gallery.marvel.example.com.marvelgallery;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -78,6 +80,7 @@ public class ComicsListActivity extends Activity implements ComicsListContract.V
                         recyclerView.setAdapter(new ComicsAdapter(ComicsListActivity.this,comicsList));
                         recyclerView.invalidate();
                         totalPagesToRead = 0;
+                        hideKeybord();
                     }
 
                     return true;
@@ -113,6 +116,7 @@ public class ComicsListActivity extends Activity implements ComicsListContract.V
                 recyclerView.setAdapter(new ComicsAdapter(ComicsListActivity.this,comicsList));
                 recyclerView.invalidate();
                 totalPagesToRead = 0;
+                hideKeybord();
             }
 
         }
@@ -168,8 +172,17 @@ public class ComicsListActivity extends Activity implements ComicsListContract.V
 
             recyclerView.setAdapter(new ComicsAdapter(this,budgetComicsList));
             recyclerView.invalidate();
+            hideKeybord();
             //alert to show the max number of pages to read
             UserAlerts.showAlertDialog(ComicsListActivity.this,"Total Pages you need to read is:"+String.valueOf(totalPagesToRead));
+        }
+    }
+
+    public void hideKeybord() {
+        View view = this.getCurrentFocus();
+        if (view != null) {
+            InputMethodManager inputManager = (InputMethodManager) ComicsListActivity.this.getSystemService(Context.INPUT_METHOD_SERVICE);
+            inputManager.hideSoftInputFromWindow(view.getWindowToken(),0);
         }
     }
 }
