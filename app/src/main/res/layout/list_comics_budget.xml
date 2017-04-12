@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/topPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/title_color"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_vertical"
+            android:focusableInTouchMode="true"
+            android:layout_marginRight="@dimen/side_spacing"
+            >
+
+
+            <EditText
+                android:id="@+id/user_budget"
+                android:layout_width="220dp"
+                android:layout_height="fill_parent"
+                android:imeOptions="flagNoExtractUi|actionSearch"
+                android:inputType="numberDecimal"
+                android:focusableInTouchMode="true"
+                android:textColor="@color/header_text_color"
+                android:background="@color/colorWhite"
+                android:hint="@string/search_comics_within_budget"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:padding="8dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="5dp"
+                />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/searchBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_gravity="center_vertical|right"
+            android:src="@android:drawable/ic_menu_search"/>
+
+    </LinearLayout>
+
+
+</merge>

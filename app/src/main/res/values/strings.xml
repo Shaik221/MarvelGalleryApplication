@@ -9,4 +9,6 @@
     <string name="page_cnt">Page Count:</string>
     <string name="comic_price">Comic Price:</string>
     <string name="comic_authors">Authors:</string>
+    <string name="search_comics_within_budget">Give your budget,..</string>
+    <string name="no_values">No Budget was given. Full comics list will come up now.</string>
 </resources>

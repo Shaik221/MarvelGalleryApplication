@@ -2,7 +2,6 @@ package gallery.marvel.example.com.marvelgallery.model.adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,16 +9,13 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-
 import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import gallery.marvel.example.com.marvelgallery.ComicDetailsActivity;
 import gallery.marvel.example.com.marvelgallery.R;
 import gallery.marvel.example.com.marvelgallery.model.beans.Result;
-import gallery.marvel.example.com.marvelgallery.utils.ImageUtils;
 
 public class ComicsAdapter extends RecyclerView.Adapter<ComicsAdapter.ViewHolder> {
     private List<Result> galleryList;
@@ -53,15 +49,6 @@ public class ComicsAdapter extends RecyclerView.Adapter<ComicsAdapter.ViewHolder
                                             context.startActivity(intent);
                                         }
                                     });
-
-     /*   viewHolder.img.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(context, ComicDetailsActivity.class);
-                intent.putExtra("ComicDetails", galleryList.get(i));
-                context.startActivity(intent);
-            }
-        });*/
     }
 
     @Override

@@ -1,9 +1,10 @@
 package gallery.marvel.example.com.marvelgallery.model.beans;
 
-import java.io.Serializable;
-import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+
+import java.io.Serializable;
+import java.util.ArrayList;
 
 public class Data implements Serializable {
 
@@ -21,7 +22,7 @@ private Integer total;
 private Integer count;
 @SerializedName("results")
 @Expose
-private List<Result> results = null;
+private ArrayList<Result> results = null;
 
 public Integer getOffset() {
 return offset;
@@ -55,11 +56,11 @@ public void setCount(Integer count) {
 this.count = count;
 }
 
-public List<Result> getResults() {
+public ArrayList<Result> getResults() {
 return results;
 }
 
-public void setResults(List<Result> results) {
+public void setResults(ArrayList<Result> results) {
 this.results = results;
 }
 

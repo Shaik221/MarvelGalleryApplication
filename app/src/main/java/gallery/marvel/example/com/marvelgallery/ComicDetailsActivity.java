@@ -9,7 +9,6 @@ import android.widget.TextView;
 import java.util.List;
 
 import gallery.marvel.example.com.marvelgallery.model.beans.Item;
-import gallery.marvel.example.com.marvelgallery.model.beans.Items;
 import gallery.marvel.example.com.marvelgallery.model.beans.Result;
 
 public class ComicDetailsActivity extends Activity implements View.OnClickListener {

@@ -9,4 +9,5 @@
     <dimen name="layout_margin_top">2dp</dimen>
     <dimen name="tile_size">18sp</dimen>
     <dimen name="text_size">16sp</dimen>
+    <dimen name="side_spacing">15dp</dimen>
 </resources>

@@ -2,7 +2,6 @@ package gallery.marvel.example.com.marvelgallery.dagger.services;
 
 import java.util.Map;
 
-
 import gallery.marvel.example.com.marvelgallery.model.beans.DataResults;
 import retrofit2.http.GET;
 import retrofit2.http.QueryMap;

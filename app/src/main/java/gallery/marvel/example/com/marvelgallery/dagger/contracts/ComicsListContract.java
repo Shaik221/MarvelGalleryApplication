@@ -2,14 +2,13 @@ package gallery.marvel.example.com.marvelgallery.dagger.contracts;
 
 
 import java.util.ArrayList;
-import java.util.List;
 
 import gallery.marvel.example.com.marvelgallery.model.beans.Result;
 
 public interface ComicsListContract {
     //get list of all comics
     interface View {
-        void showComicsList(List<Result> comicsDetailsList);
+        void showComicsList(ArrayList<Result> comicsDetailsList);
 
         void showError(String message);
 

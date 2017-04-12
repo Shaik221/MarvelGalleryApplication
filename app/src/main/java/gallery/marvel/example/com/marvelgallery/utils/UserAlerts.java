@@ -1,15 +1,10 @@
 package gallery.marvel.example.com.marvelgallery.utils;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.graphics.Color;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.view.ContextThemeWrapper;
 import android.util.Log;
-import android.view.View;
-import android.widget.TextView;
-
-import java.util.ArrayList;
 
 import gallery.marvel.example.com.marvelgallery.R;
 
@@ -35,8 +30,9 @@ public class UserAlerts {
 
             if (alertDialog == null || (!alertDialog.isShowing())) {
 
-                alertDialog = new AlertDialog.Builder(
-                        context).create();
+                alertDialog = new AlertDialog.Builder(new ContextThemeWrapper(context, R.style.myDialog)).create();
+              /*  alertDialog = new AlertDialog.Builder(
+                        context).create();*/
 
                 // Setting Dialog Title
                 alertDialog.setTitle(context.getString(R.string.app_name));

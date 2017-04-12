@@ -7,11 +7,21 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:id="@+id/list_comics_budget"
+        android:layout_height="wrap_content">
+    <include layout="@layout/list_comics_budget">
+
+    </include>
+    </LinearLayout>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/comicsList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:paddingTop="10dp"
+        android:layout_below="@+id/list_comics_budget"
         />
 
 

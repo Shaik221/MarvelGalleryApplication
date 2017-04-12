@@ -1,8 +1,8 @@
 package gallery.marvel.example.com.marvelgallery;
 
-import org.junit.Test;
+import junit.framework.Assert;
 
-import static org.junit.Assert.*;
+import org.junit.Test;
 
 /**
  * DataResults local unit test, which will execute on the development machine (host).
@@ -11,7 +11,8 @@ import static org.junit.Assert.*;
  */
 public class DataResultsUnitTest {
     @Test
-    public void addition_isCorrect() throws Exception {
-        assertEquals(4, 2 + 2);
+    public void list_comics_checks() throws Exception {
+        Assert.assertNotNull(new ComicsListActivity());
+        Assert.assertEquals(100, ComicsListActivity.comicsList.size());
     }
 }
